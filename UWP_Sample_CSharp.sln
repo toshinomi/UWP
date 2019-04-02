@@ -3,25 +3,49 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28711.60
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UWP_Sample_CSharp", "CSharp\MediaPlayer\MediaPlayer.csproj", "{BD51F0C6-BC7E-4B9A-84A9-1B0BF4084516}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UWP_Sample_CSharp", "CSharp\MediaPlayer\MediaPlayer.csproj", "{D359D98A-0D6F-4FCF-93F9-B4B87FC0E862}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|ARM64 = Debug|ARM64
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|ARM = Release|ARM
+		Release|ARM64 = Release|ARM64
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BD51F0C6-BC7E-4B9A-84A9-1B0BF4084516}.Debug|Any CPU.ActiveCfg = Debug|x64
-		{BD51F0C6-BC7E-4B9A-84A9-1B0BF4084516}.Debug|Any CPU.Build.0 = Debug|x64
-		{BD51F0C6-BC7E-4B9A-84A9-1B0BF4084516}.Debug|Any CPU.Deploy.0 = Debug|x64
-		{BD51F0C6-BC7E-4B9A-84A9-1B0BF4084516}.Release|Any CPU.ActiveCfg = Release|x64
-		{BD51F0C6-BC7E-4B9A-84A9-1B0BF4084516}.Release|Any CPU.Build.0 = Release|x64
-		{BD51F0C6-BC7E-4B9A-84A9-1B0BF4084516}.Release|Any CPU.Deploy.0 = Release|x64
+		{D359D98A-0D6F-4FCF-93F9-B4B87FC0E862}.Debug|ARM.ActiveCfg = Debug|ARM
+		{D359D98A-0D6F-4FCF-93F9-B4B87FC0E862}.Debug|ARM.Build.0 = Debug|ARM
+		{D359D98A-0D6F-4FCF-93F9-B4B87FC0E862}.Debug|ARM.Deploy.0 = Debug|ARM
+		{D359D98A-0D6F-4FCF-93F9-B4B87FC0E862}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{D359D98A-0D6F-4FCF-93F9-B4B87FC0E862}.Debug|ARM64.Build.0 = Debug|ARM64
+		{D359D98A-0D6F-4FCF-93F9-B4B87FC0E862}.Debug|ARM64.Deploy.0 = Debug|ARM64
+		{D359D98A-0D6F-4FCF-93F9-B4B87FC0E862}.Debug|x64.ActiveCfg = Debug|x64
+		{D359D98A-0D6F-4FCF-93F9-B4B87FC0E862}.Debug|x64.Build.0 = Debug|x64
+		{D359D98A-0D6F-4FCF-93F9-B4B87FC0E862}.Debug|x64.Deploy.0 = Debug|x64
+		{D359D98A-0D6F-4FCF-93F9-B4B87FC0E862}.Debug|x86.ActiveCfg = Debug|x86
+		{D359D98A-0D6F-4FCF-93F9-B4B87FC0E862}.Debug|x86.Build.0 = Debug|x86
+		{D359D98A-0D6F-4FCF-93F9-B4B87FC0E862}.Debug|x86.Deploy.0 = Debug|x86
+		{D359D98A-0D6F-4FCF-93F9-B4B87FC0E862}.Release|ARM.ActiveCfg = Release|ARM
+		{D359D98A-0D6F-4FCF-93F9-B4B87FC0E862}.Release|ARM.Build.0 = Release|ARM
+		{D359D98A-0D6F-4FCF-93F9-B4B87FC0E862}.Release|ARM.Deploy.0 = Release|ARM
+		{D359D98A-0D6F-4FCF-93F9-B4B87FC0E862}.Release|ARM64.ActiveCfg = Release|ARM64
+		{D359D98A-0D6F-4FCF-93F9-B4B87FC0E862}.Release|ARM64.Build.0 = Release|ARM64
+		{D359D98A-0D6F-4FCF-93F9-B4B87FC0E862}.Release|ARM64.Deploy.0 = Release|ARM64
+		{D359D98A-0D6F-4FCF-93F9-B4B87FC0E862}.Release|x64.ActiveCfg = Release|x64
+		{D359D98A-0D6F-4FCF-93F9-B4B87FC0E862}.Release|x64.Build.0 = Release|x64
+		{D359D98A-0D6F-4FCF-93F9-B4B87FC0E862}.Release|x64.Deploy.0 = Release|x64
+		{D359D98A-0D6F-4FCF-93F9-B4B87FC0E862}.Release|x86.ActiveCfg = Release|x86
+		{D359D98A-0D6F-4FCF-93F9-B4B87FC0E862}.Release|x86.Build.0 = Release|x86
+		{D359D98A-0D6F-4FCF-93F9-B4B87FC0E862}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {2FE25D51-1C3E-4725-A448-A056435328EE}
+		SolutionGuid = {C5074F07-3351-4370-AF12-7BCEC716F80E}
 	EndGlobalSection
 EndGlobal
