@@ -1,5 +1,5 @@
 ﻿using System;
-using Windows.UI.Popups;
+using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
@@ -14,16 +14,31 @@ namespace WebView
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private const string m_strUri = "https://www.bing.com/";
+
         public MainPage()
         {
             this.InitializeComponent();
         }
 
+        private async void WebView_NavigationCompleted(Windows.UI.Xaml.Controls.WebView sender, WebViewNavigationCompletedEventArgs e)
+        {
+            if (!e.IsSuccess)
+            {
+                string strErrMsg = e.WebErrorStatus.ToString();
+                int nErrCode = (int)e.WebErrorStatus;
+                string strMsg = string.Format("{0} ( {1} )", strErrMsg, nErrCode);
+                await new Windows.UI.Popups.MessageDialog(strMsg).ShowAsync();
+            }
+
+            textUri.Text = GetCurUri();
+
+            return;
+        }
+
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            textUri.Text = "https://www.bing.com/";
-            string strUri = textUri.Text;
-            ShowWebView(ref strUri);
+            HomwWebView();
 
             return;
         }
@@ -38,7 +53,6 @@ namespace WebView
         private void OnBack_Click(object sender, RoutedEventArgs e)
         {
             BackWebView();
-            textUri.Text = GetCurUri();
 
             return;
         }
@@ -46,7 +60,6 @@ namespace WebView
         private void OnForward_Click(object sender, RoutedEventArgs e)
         {
             ForwardWebView();
-            textUri.Text = GetCurUri();
 
             return;
         }
@@ -54,7 +67,13 @@ namespace WebView
         private void OnRefresh_Click(object sender, RoutedEventArgs e)
         {
             RefreshWebView();
-            textUri.Text = GetCurUri();
+
+            return;
+        }
+
+        private void OnHome_Click(object sender, RoutedEventArgs e)
+        {
+            HomwWebView();
 
             return;
         }
@@ -69,8 +88,11 @@ namespace WebView
 
         private void OnKeyDown(object sender, KeyRoutedEventArgs e)
         {
-            String strAddress = textUri.Text;
-            ShowWebView(ref strAddress);
+            if (e.Key == VirtualKey.Enter)
+            {
+                String strAddress = textUri.Text;
+                ShowWebView(ref strAddress);
+            }
 
             return;
         }
@@ -134,6 +156,13 @@ namespace WebView
             }
 
             return bRst;
+        }
+
+        public bool HomwWebView()
+        {
+            textUri.Text = m_strUri;
+            string strUri = m_strUri;
+            return ShowWebView(ref strUri);
         }
 
         public String GetCurUri()

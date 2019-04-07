@@ -32,6 +32,11 @@
                                 <SymbolIcon Symbol="refresh" />
                             </AppBarButton.Icon>
                         </AppBarButton>
+                        <AppBarButton x:Name="btnHome" Label="Home" Click="OnHome_Click">
+                            <AppBarButton.Icon>
+                                <SymbolIcon Symbol="Home" />
+                            </AppBarButton.Icon>
+                        </AppBarButton>
                         <AppBarButton x:Name="btnFind" Label="Find" Click="OnFind_Click">
                             <AppBarButton.Icon>
                                 <SymbolIcon Symbol="Find" />
@@ -41,7 +46,7 @@
                     </StackPanel>
                 </Grid>
             </AppBar>
-            <WebView x:Name="webView" Height="933" Margin="10,57,10,0" VerticalAlignment="Top"/>
+            <WebView x:Name="webView" Height="935" Margin="10,57,10,0" VerticalAlignment="Top" NavigationCompleted="WebView_NavigationCompleted"/>
         </Grid>
     </Grid>
 </Page>
