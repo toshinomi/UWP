@@ -23,6 +23,8 @@ namespace WebView
 
         private async void WebView_NavigationCompleted(Windows.UI.Xaml.Controls.WebView sender, WebViewNavigationCompletedEventArgs e)
         {
+            textUri.Text = GetCurUri();
+
             if (!e.IsSuccess)
             {
                 string strErrMsg = e.WebErrorStatus.ToString();
@@ -31,14 +33,12 @@ namespace WebView
                 await new Windows.UI.Popups.MessageDialog(strMsg).ShowAsync();
             }
 
-            textUri.Text = GetCurUri();
-
             return;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            HomwWebView();
+            HomeWebView();
 
             return;
         }
@@ -73,15 +73,15 @@ namespace WebView
 
         private void OnHome_Click(object sender, RoutedEventArgs e)
         {
-            HomwWebView();
+            HomeWebView();
 
             return;
         }
 
         private void OnFind_Click(object sender, RoutedEventArgs e)
         {
-            String strAddress = textUri.Text;
-            ShowWebView(ref strAddress);
+            String strUri = textUri.Text;
+            ShowWebView(ref strUri);
 
             return;
         }
@@ -90,8 +90,8 @@ namespace WebView
         {
             if (e.Key == VirtualKey.Enter)
             {
-                String strAddress = textUri.Text;
-                ShowWebView(ref strAddress);
+                String strUri = textUri.Text;
+                ShowWebView(ref strUri);
             }
 
             return;
@@ -158,7 +158,7 @@ namespace WebView
             return bRst;
         }
 
-        public bool HomwWebView()
+        public bool HomeWebView()
         {
             textUri.Text = m_strUri;
             string strUri = m_strUri;
