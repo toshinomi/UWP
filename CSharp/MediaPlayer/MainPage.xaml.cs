@@ -34,7 +34,7 @@ namespace MediaPlayer
             base.OnNavigatedFrom(e);
         }
 
-        private async void BtnFileSelect_Click(object sender, RoutedEventArgs e)
+        public async void OnClickFileSelect(object sender, RoutedEventArgs e)
         {
             var picker = new Windows.Storage.Pickers.FileOpenPicker();
             picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.VideosLibrary;

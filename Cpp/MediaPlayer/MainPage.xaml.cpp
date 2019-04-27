@@ -44,7 +44,7 @@ void MainPage::OnNavigatedFrom(NavigationEventArgs^ e)
 	mediaElement->Source = nullptr;
 }
 
-void MainPage::BtnFileSelect_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+void MainPage::OnClickFileSelect(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	auto picker = ref new FileOpenPicker();
 	picker->SuggestedStartLocation = PickerLocationId::VideosLibrary;

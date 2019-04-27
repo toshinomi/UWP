@@ -18,7 +18,7 @@ Public NotInheritable Class MainPage
 
     End Sub
 
-    Private Async Sub WebView_NavigationCompleted(ByVal sender As Windows.UI.Xaml.Controls.WebView, ByVal e As WebViewNavigationCompletedEventArgs)
+    Public Async Sub OnNavigationCompletedWebView(ByVal sender As Windows.UI.Xaml.Controls.WebView, ByVal e As WebViewNavigationCompletedEventArgs)
         textUri.Text = GetCurUri()
 
         If (e.IsSuccess = False) Then
@@ -43,38 +43,38 @@ Public NotInheritable Class MainPage
         Return
     End Sub
 
-    Private Sub OnBack_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
+    Public Sub OnClickBack(ByVal sender As Object, ByVal e As RoutedEventArgs)
         BackWebView()
 
         Return
     End Sub
 
-    Private Sub OnForward_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
+    Public Sub OnClickForward(ByVal sender As Object, ByVal e As RoutedEventArgs)
         ForwardWebView()
 
         Return
     End Sub
 
-    Private Sub OnRefresh_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
+    Public Sub OnClickRefresh(ByVal sender As Object, ByVal e As RoutedEventArgs)
         RefreshWebView()
 
         Return
     End Sub
 
-    Private Sub OnHome_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
+    Public Sub OnClickHome(ByVal sender As Object, ByVal e As RoutedEventArgs)
         HomeWebView()
 
         Return
     End Sub
 
-    Private Sub OnFind_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
+    Public Sub OnClickFind(ByVal sender As Object, ByVal e As RoutedEventArgs)
         Dim strUri As String = textUri.Text
         ShowWebView(strUri)
 
         Return
     End Sub
 
-    Private Sub OnTextBoxKeyDown(ByVal sender As Object, ByVal e As KeyRoutedEventArgs)
+    Public Sub OnKeyDownTextUri(ByVal sender As Object, ByVal e As KeyRoutedEventArgs)
         If (e.Key = VirtualKey.Enter) Then
             Dim strUri As String = textUri.Text
             ShowWebView(strUri)

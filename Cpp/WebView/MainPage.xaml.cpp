@@ -27,7 +27,7 @@ MainPage::MainPage()
 	InitializeComponent();
 }
 
-void MainPage::WebView_NavigationCompleted(Windows::UI::Xaml::Controls::WebView^ sender, Windows::UI::Xaml::Controls::WebViewNavigationCompletedEventArgs^ e)
+void MainPage::OnNavigationCompletedWebView(Windows::UI::Xaml::Controls::WebView^ sender, Windows::UI::Xaml::Controls::WebViewNavigationCompletedEventArgs^ e)
 {
 	textUri->Text = GetCurUri();
 
@@ -55,33 +55,33 @@ void MainPage::OnNavigatedFrom(NavigationEventArgs^ e)
 	return;
 }
 
-void MainPage::OnBack_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+void MainPage::OnClickBack(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	return;
 }
 
-void MainPage::OnForward_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+void MainPage::OnClickForward(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	BackWebView();
 
 	return;
 }
 
-void MainPage::OnRefresh_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+void MainPage::OnClickRefresh(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	RefreshWebView();
 
 	return;
 }
 
-void MainPage::OnHome_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+void MainPage::OnClickHome(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	HomeWebView();
 
 	return;
 }
 
-void MainPage::OnFind_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+void MainPage::OnClickFind(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	Platform::String^ strUri = textUri->Text;
 	ShowWebView(strUri);
@@ -89,7 +89,7 @@ void MainPage::OnFind_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedE
 	return;
 }
 
-void MainPage::OnKeyDown(Platform::Object^ sender, Windows::UI::Xaml::Input::KeyRoutedEventArgs^ e)
+void MainPage::OnKeyDownTextUri(Platform::Object^ sender, Windows::UI::Xaml::Input::KeyRoutedEventArgs^ e)
 {
 	if (e->Key == Windows::System::VirtualKey::Enter)
 	{

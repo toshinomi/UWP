@@ -30,12 +30,13 @@ namespace WebView
 	private:
 		Platform::String^ m_strUri = "https://www.bing.com/";
 
-		void WebView_NavigationCompleted(Windows::UI::Xaml::Controls::WebView^ sender, Windows::UI::Xaml::Controls::WebViewNavigationCompletedEventArgs^ e);
-		void OnBack_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
-		void OnForward_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
-		void OnRefresh_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
-		void OnHome_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
-		void OnFind_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
-		void OnKeyDown(Platform::Object^ sender, Windows::UI::Xaml::Input::KeyRoutedEventArgs^ e);
+	public:
+		void OnNavigationCompletedWebView(Windows::UI::Xaml::Controls::WebView^ sender, Windows::UI::Xaml::Controls::WebViewNavigationCompletedEventArgs^ e);
+		void OnClickBack(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void OnClickForward(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void OnClickRefresh(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void OnClickHome(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void OnClickFind(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+		void OnKeyDownTextUri(Platform::Object^ sender, Windows::UI::Xaml::Input::KeyRoutedEventArgs^ e);
 	};
 }

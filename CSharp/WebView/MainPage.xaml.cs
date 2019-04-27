@@ -21,7 +21,7 @@ namespace WebView
             this.InitializeComponent();
         }
 
-        private async void WebView_NavigationCompleted(Windows.UI.Xaml.Controls.WebView sender, WebViewNavigationCompletedEventArgs e)
+        public async void OnNavigationCompletedWebView(Windows.UI.Xaml.Controls.WebView sender, WebViewNavigationCompletedEventArgs e)
         {
             textUri.Text = GetCurUri();
 
@@ -50,35 +50,35 @@ namespace WebView
             return;
         }
 
-        private void OnBack_Click(object sender, RoutedEventArgs e)
+        public void OnClickBack(object sender, RoutedEventArgs e)
         {
             BackWebView();
 
             return;
         }
 
-        private void OnForward_Click(object sender, RoutedEventArgs e)
+        public void OnClickForward(object sender, RoutedEventArgs e)
         {
             ForwardWebView();
 
             return;
         }
 
-        private void OnRefresh_Click(object sender, RoutedEventArgs e)
+        public void OnClickRefresh(object sender, RoutedEventArgs e)
         {
             RefreshWebView();
 
             return;
         }
 
-        private void OnHome_Click(object sender, RoutedEventArgs e)
+        public void OnClickHome(object sender, RoutedEventArgs e)
         {
             HomeWebView();
 
             return;
         }
 
-        private void OnFind_Click(object sender, RoutedEventArgs e)
+        public void OnClickFind(object sender, RoutedEventArgs e)
         {
             String strUri = textUri.Text;
             ShowWebView(ref strUri);
@@ -86,7 +86,7 @@ namespace WebView
             return;
         }
 
-        private void OnKeyDown(object sender, KeyRoutedEventArgs e)
+        public void OnKeyDownTextUri(object sender, KeyRoutedEventArgs e)
         {
             if (e.Key == VirtualKey.Enter)
             {

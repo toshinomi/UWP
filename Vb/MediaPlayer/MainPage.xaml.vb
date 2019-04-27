@@ -28,7 +28,7 @@ Public NotInheritable Class MainPage
         Me.OnNavigatedFrom(e)
     End Sub
 
-    Private Async Sub BtnFileSelect_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
+    Public Async Sub OnClickFileSelect(ByVal sender As Object, ByVal e As RoutedEventArgs)
         Dim picker = New Windows.Storage.Pickers.FileOpenPicker()
         picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.VideosLibrary
         picker.FileTypeFilter.Add("*")

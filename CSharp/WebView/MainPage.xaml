@@ -17,36 +17,36 @@
                     </Grid.RowDefinitions>
                     <StackPanel Orientation="Horizontal">
 
-                        <AppBarButton x:Name="btnBack" Label="Back" Click="OnBack_Click">
+                        <AppBarButton x:Name="btnBack" Label="Back" Click="OnClickBack">
                             <AppBarButton.Icon>
                                 <SymbolIcon Symbol="Back" />
                             </AppBarButton.Icon>
                         </AppBarButton>
-                        <AppBarButton x:Name="btnForward" Label="Forward" Click="OnForward_Click">
+                        <AppBarButton x:Name="btnForward" Label="Forward" Click="OnClickForward">
                             <AppBarButton.Icon>
                                 <SymbolIcon Symbol="Forward" />
                             </AppBarButton.Icon>
                         </AppBarButton>
-                        <AppBarButton x:Name="btnRefresh" Label="Refresh" Click="OnRefresh_Click">
+                        <AppBarButton x:Name="btnRefresh" Label="Refresh" Click="OnClickRefresh">
                             <AppBarButton.Icon>
                                 <SymbolIcon Symbol="refresh" />
                             </AppBarButton.Icon>
                         </AppBarButton>
-                        <AppBarButton x:Name="btnHome" Label="Home" Click="OnHome_Click">
+                        <AppBarButton x:Name="btnHome" Label="Home" Click="OnClickHome">
                             <AppBarButton.Icon>
                                 <SymbolIcon Symbol="Home" />
                             </AppBarButton.Icon>
                         </AppBarButton>
-                        <AppBarButton x:Name="btnFind" Label="Find" Click="OnFind_Click">
+                        <AppBarButton x:Name="btnFind" Label="Find" Click="OnClickFind">
                             <AppBarButton.Icon>
                                 <SymbolIcon Symbol="Find" />
                             </AppBarButton.Icon>
                         </AppBarButton>
-                        <TextBox x:Name="textUri" Text="" Width="1236" Height="30" KeyDown="OnKeyDown"/>
+                        <TextBox x:Name="textUri" Text="" Width="1236" Height="30" KeyDown="OnKeyDownTextUri"/>
                     </StackPanel>
                 </Grid>
             </AppBar>
-            <WebView x:Name="webView" Height="935" Margin="10,57,10,0" VerticalAlignment="Top" NavigationCompleted="WebView_NavigationCompleted"/>
+            <WebView x:Name="webView" Height="935" Margin="10,57,10,0" VerticalAlignment="Top" NavigationCompleted="OnNavigationCompletedWebView"/>
         </Grid>
     </Grid>
 </Page>
