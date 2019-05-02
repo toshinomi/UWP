@@ -42,7 +42,7 @@
                                 <SymbolIcon Symbol="Find" />
                             </AppBarButton.Icon>
                         </AppBarButton>
-                        <TextBox x:Name="textUri" Text="" Width="1236" Height="30" KeyDown="OnKeyDownTextUri"/>
+                        <TextBox x:Name="textUri" Text="" Width="800" Height="35" KeyDown="OnKeyDownTextUri"/>
                     </StackPanel>
                 </Grid>
             </AppBar>

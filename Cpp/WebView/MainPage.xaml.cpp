@@ -57,12 +57,14 @@ void MainPage::OnNavigatedFrom(NavigationEventArgs^ e)
 
 void MainPage::OnClickBack(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
+	BackWebView();
+
 	return;
 }
 
 void MainPage::OnClickForward(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
-	BackWebView();
+	ForwardWebView();
 
 	return;
 }
