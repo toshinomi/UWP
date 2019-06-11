@@ -23,7 +23,6 @@ namespace MediaPlayer
 		virtual void OnNavigatedFrom(Windows::UI::Xaml::Navigation::NavigationEventArgs^ e) override;
 
 	private:
-		Windows::Storage::AccessCache::StorageItemAccessList^ m_storageItemAccessList;
 		Windows::Storage::StorageFile^ m_storageFile;
 
 	};

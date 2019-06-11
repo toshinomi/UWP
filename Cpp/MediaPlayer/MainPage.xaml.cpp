@@ -35,8 +35,6 @@ MainPage::MainPage()
 
 void MainPage::OnNavigatedTo(NavigationEventArgs^ e)
 {
-	m_storageItemAccessList = StorageApplicationPermissions::FutureAccessList;
-	m_storageItemAccessList->Clear();
 }
 
 void MainPage::OnNavigatedFrom(NavigationEventArgs^ e)
@@ -59,7 +57,6 @@ void MainPage::OnClickFileSelect(Platform::Object^ sender, Windows::UI::Xaml::Ro
 		}
 
 		m_storageFile = videoFile;
-		m_storageItemAccessList->Add(m_storageFile);
 
 		create_task(m_storageFile->OpenReadAsync()).then([this](IRandomAccessStreamWithContentType^ videoSource)
 		{
