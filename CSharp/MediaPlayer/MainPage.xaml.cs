@@ -15,7 +15,6 @@ namespace MediaPlayer
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private StorageItemAccessList m_storageItemAccessList;
         private StorageFile m_storageFile;
 
         public MainPage()
@@ -25,8 +24,6 @@ namespace MediaPlayer
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            m_storageItemAccessList = StorageApplicationPermissions.FutureAccessList;
-            m_storageItemAccessList.Clear();
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
@@ -47,7 +44,6 @@ namespace MediaPlayer
                 return;
             }
 
-            m_storageItemAccessList.Add(m_storageFile);
             mediaElement.SetSource(await m_storageFile.OpenReadAsync(), m_storageFile.ContentType);
         }
     }
