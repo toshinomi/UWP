@@ -9,7 +9,6 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <!--<Button x:Name="btnFileSelect" Content="File Select..." Height="40" Margin="10,10,0,0" VerticalAlignment="Top" Width="107" Click="OnClickFileSelect"/>-->
         <AppBar Background="#33ff00ff" >
             <Grid>
                 <Grid.RowDefinitions>
