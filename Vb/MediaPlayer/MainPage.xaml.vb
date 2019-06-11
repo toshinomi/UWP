@@ -8,7 +8,6 @@ Imports Windows.Storage.AccessCache
 Public NotInheritable Class MainPage
     Inherits Page
 
-    Private m_storageItemAccessList As StorageItemAccessList
     Private m_storageFile As StorageFile
 
     Public Sub New()
@@ -19,8 +18,6 @@ Public NotInheritable Class MainPage
     End Sub
 
     Protected Overrides Sub OnNavigatedTo(ByVal e As NavigationEventArgs)
-        m_storageItemAccessList = StorageApplicationPermissions.FutureAccessList
-        m_storageItemAccessList.Clear()
     End Sub
 
     Protected Overrides Sub OnNavigatedFrom(ByVal e As NavigationEventArgs)
@@ -38,7 +35,6 @@ Public NotInheritable Class MainPage
             Return
         End If
 
-        m_storageItemAccessList.Add(m_storageFile)
         mediaElement.SetSource(Await m_storageFile.OpenReadAsync(), m_storageFile.ContentType)
     End Sub
 End Class
