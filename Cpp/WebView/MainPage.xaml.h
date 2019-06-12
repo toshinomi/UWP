@@ -25,7 +25,6 @@ namespace WebView
 
 	protected:
 		virtual void OnNavigatedTo(Windows::UI::Xaml::Navigation::NavigationEventArgs^ e) override;
-		virtual void OnNavigatedFrom(Windows::UI::Xaml::Navigation::NavigationEventArgs^ e) override;
 
 	private:
 		Platform::String^ m_strUri = "https://www.bing.com/";

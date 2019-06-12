@@ -50,11 +50,6 @@ void MainPage::OnNavigatedTo(NavigationEventArgs^ e)
 	return;
 }
 
-void MainPage::OnNavigatedFrom(NavigationEventArgs^ e)
-{
-	return;
-}
-
 void MainPage::OnClickBack(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	BackWebView();
