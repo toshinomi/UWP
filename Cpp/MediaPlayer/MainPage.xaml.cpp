@@ -33,15 +33,6 @@ MainPage::MainPage()
 	InitializeComponent();
 }
 
-void MainPage::OnNavigatedTo(NavigationEventArgs^ e)
-{
-}
-
-void MainPage::OnNavigatedFrom(NavigationEventArgs^ e)
-{
-	mediaElement->Source = nullptr;
-}
-
 void MainPage::OnClickFileSelect(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	auto picker = ref new FileOpenPicker();
