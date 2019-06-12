@@ -37,12 +37,6 @@ Public NotInheritable Class MainPage
         Return
     End Sub
 
-    Protected Overrides Sub OnNavigatedFrom(ByVal e As NavigationEventArgs)
-        Me.OnNavigatedFrom(e)
-
-        Return
-    End Sub
-
     Public Sub OnClickBack(ByVal sender As Object, ByVal e As RoutedEventArgs)
         BackWebView()
 
