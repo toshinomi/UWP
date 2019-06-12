@@ -15,14 +15,6 @@ Public NotInheritable Class MainPage
 
     End Sub
 
-    Protected Overloads Sub OnNavigatedTo(ByVal e As NavigationEventArgs)
-        Me.OnNavigatedTo(e)
-    End Sub
-
-    Protected Overloads Sub OnNavigatedForm(ByVal e As NavigationEventArgs)
-        Me.OnNavigatedForm(e)
-    End Sub
-
     Public Async Sub OnClickFileSelect(ByVal sender As Object, ByVal e As RoutedEventArgs)
         Dim picker = New Windows.Storage.Pickers.FileOpenPicker()
         picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.VideosLibrary
