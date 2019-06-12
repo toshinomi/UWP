@@ -44,13 +44,6 @@ namespace WebView
             return;
         }
 
-        protected override void OnNavigatedFrom(NavigationEventArgs e)
-        {
-            base.OnNavigatedFrom(e);
-
-            return;
-        }
-
         public void OnClickBack(object sender, RoutedEventArgs e)
         {
             BackWebView();
