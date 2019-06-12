@@ -17,14 +17,6 @@ Public NotInheritable Class MainPage
         ' InitializeComponent() 呼び出しの後で初期化を追加します。
     End Sub
 
-    Protected Overrides Sub OnNavigatedTo(ByVal e As NavigationEventArgs)
-    End Sub
-
-    Protected Overrides Sub OnNavigatedFrom(ByVal e As NavigationEventArgs)
-        mediaElement.Source = Nothing
-        Me.OnNavigatedFrom(e)
-    End Sub
-
     Public Async Sub OnClickFileSelect(ByVal sender As Object, ByVal e As RoutedEventArgs)
         Dim picker = New Windows.Storage.Pickers.FileOpenPicker()
         picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.VideosLibrary
