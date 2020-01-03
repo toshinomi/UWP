@@ -25,11 +25,19 @@ namespace ImgProc
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
         public MainPage()
         {
             this.InitializeComponent();
         }
 
+        /// <summary>
+        /// ファイル選択ボタンのクリックイベント
+        /// </summary>
+        /// <param name="sender">オブジェクト</param>
+        /// <param name="e">ルーティングイベントのデータ</param>
         public async void OnClickFileSelect(object sender, RoutedEventArgs e)
         {
             var picker = new Windows.Storage.Pickers.FileOpenPicker();
@@ -48,27 +56,37 @@ namespace ImgProc
             BitmapImage bitmap = new BitmapImage();
             bitmap.SetSource(openFile);
 
-            var swBitmap = await CreateSoftwareBitmap(file, bitmap);
-            ImgProcGrayScale(swBitmap);
-            this.Image.Source = await ConvertToSoftwareBitmapSource(swBitmap);
+            var softwareBitmap = await CreateSoftwareBitmap(file, bitmap);
+            ImgProcGrayScale(softwareBitmap);
+            this.Image.Source = await ConvertToSoftwareBitmapSource(softwareBitmap);
         }
 
-        public async Task<SoftwareBitmap> CreateSoftwareBitmap(Windows.Storage.StorageFile file, BitmapImage bitmap)
+        /// <summary>
+        /// ソフトウェアビットマップイメージ生成
+        /// </summary>
+        /// <param name="_file">ストレージファイル</param>
+        /// <param name="_bitmap">ビットマップイメージ</param>
+        /// <returns>ソフトウェアビットマップ</returns>
+        public async Task<SoftwareBitmap> CreateSoftwareBitmap(Windows.Storage.StorageFile _file, BitmapImage _bitmap)
         {
-            Windows.Storage.Streams.IRandomAccessStream random = await Windows.Storage.Streams.RandomAccessStreamReference.CreateFromFile(file).OpenReadAsync();
+            Windows.Storage.Streams.IRandomAccessStream random = await Windows.Storage.Streams.RandomAccessStreamReference.CreateFromFile(_file).OpenReadAsync();
             Windows.Graphics.Imaging.BitmapDecoder decoder = await Windows.Graphics.Imaging.BitmapDecoder.CreateAsync(random);
 
-            var swBitmap = new SoftwareBitmap(BitmapPixelFormat.Rgba8, bitmap.PixelWidth, bitmap.PixelHeight);
-            return swBitmap = await decoder.GetSoftwareBitmapAsync();
+            var softwareBitmap = new SoftwareBitmap(BitmapPixelFormat.Rgba8, _bitmap.PixelWidth, _bitmap.PixelHeight);
+            return softwareBitmap = await decoder.GetSoftwareBitmapAsync();
         }
 
-        public void ImgProcGrayScale(SoftwareBitmap bitmap)
+        /// <summary>
+        /// 画像処理グレースケール
+        /// </summary>
+        /// <param name="_bitmap">ソフトウェアビットマップ</param>
+        public void ImgProcGrayScale(SoftwareBitmap _bitmap)
         {
             int nIdxWidth;
             int nIdxHeight;
             unsafe
             {
-                using (var buffer = bitmap.LockBuffer(BitmapBufferAccessMode.ReadWrite))
+                using (var buffer = _bitmap.LockBuffer(BitmapBufferAccessMode.ReadWrite))
                 using (var reference = buffer.CreateReference())
                 {
                     if (reference is IMemoryBufferByteAccess)
@@ -101,9 +119,14 @@ namespace ImgProc
             }
         }
 
-        public async Task<SoftwareBitmapSource> ConvertToSoftwareBitmapSource(SoftwareBitmap bitmap)
+        /// <summary>
+        /// ソフトウェアビットマップからソフトウェアビットマップソース変換
+        /// </summary>
+        /// <param name="_bitmap">ソフトウェアビットマップ</param>
+        /// <returns>ソフトウェアビットマップソース</returns>
+        public async Task<SoftwareBitmapSource> ConvertToSoftwareBitmapSource(SoftwareBitmap _bitmap)
         {
-            SoftwareBitmap displayableImage = SoftwareBitmap.Convert(bitmap, BitmapPixelFormat.Bgra8, BitmapAlphaMode.Premultiplied);
+            SoftwareBitmap displayableImage = SoftwareBitmap.Convert(_bitmap, BitmapPixelFormat.Bgra8, BitmapAlphaMode.Premultiplied);
             SoftwareBitmapSource bitmapSource = new SoftwareBitmapSource();
             await bitmapSource.SetBitmapAsync(displayableImage);
 
