@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage.Streams;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -23,11 +24,19 @@ namespace ImageView
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
         public MainPage()
         {
             this.InitializeComponent();
         }
 
+        /// <summary>
+        /// ファイル選択ボタンのクリックイベント
+        /// </summary>
+        /// <param name="sender">オブジェクト</param>
+        /// <param name="e">ルーティングイベントのデータ</param>
         public async void OnClickFileSelect(object sender, RoutedEventArgs e)
         {
             var picker = new Windows.Storage.Pickers.FileOpenPicker();
@@ -43,9 +52,19 @@ namespace ImageView
             }
 
             var openFile = await file.OpenReadAsync();
+            this.Image.Source = CreateImage(openFile);
+        }
+
+        /// <summary>
+        /// ビットマップイメージ生成
+        /// </summary>
+        /// <param name="_openFile">ファイルランダムアクセスストリーム</param>
+        /// <returns>ビットマップイメージ</returns>
+        public BitmapImage CreateImage(IRandomAccessStreamWithContentType _openFile)
+        {
             BitmapImage bitmap = new BitmapImage();
-            bitmap.SetSource(openFile);
-            this.Image.Source = bitmap;
+            bitmap.SetSource(_openFile);
+            return bitmap;
         }
     }
 }
