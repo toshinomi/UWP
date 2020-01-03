@@ -17,11 +17,19 @@ namespace MediaPlayer
     {
         private StorageFile m_storageFile;
 
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
         public MainPage()
         {
             this.InitializeComponent();
         }
 
+        /// <summary>
+        /// ファイル選択ボタンのクリックイベント
+        /// </summary>
+        /// <param name="sender">オブジェクト</param>
+        /// <param name="e">ルーティングイベントのデータ</param>
         public async void OnClickFileSelect(object sender, RoutedEventArgs e)
         {
             var picker = new Windows.Storage.Pickers.FileOpenPicker();
