@@ -4,6 +4,8 @@
 //
 
 #pragma once
+using namespace Windows::Storage::Streams;
+using namespace Windows::UI::Xaml::Media::Imaging;
 
 #include "MainPage.g.h"
 
@@ -15,8 +17,23 @@ namespace ImageView
 	public ref class MainPage sealed
 	{
 	public:
+		/// <summary>
+		/// コンストラクタ
+		/// </summary>
 		MainPage();
+
+		/// <summary>
+		/// ファイル選択ボタンのクリックイベント
+		/// </summary>
+		/// <param name="sender">オブジェクト</param>
+		/// <param name="e">ルーティングイベントのデータ</param>
 		void OnClickFileSelect(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 
+		/// <summary>
+		/// ビットマップイメージ生成
+		/// </summary>
+		/// <param name="_openFile">ファイルランダムアクセスストリーム</param>
+		/// <returns>ビットマップイメージ</returns>
+		BitmapImage^ CreateImage(IRandomAccessStreamWithContentType^ _openFile);
 	};
 }
