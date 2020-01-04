@@ -136,7 +136,7 @@ namespace WebView
         /// <summary>
         /// WebView表示
         /// </summary>
-        /// <param _strUri="_bitmap">URI</param>
+        /// <param name="_strUri">URI</param>
         /// <returns>WebView表示 成功/失敗</returns>
         public bool ShowWebView(string _strUri)
         {
