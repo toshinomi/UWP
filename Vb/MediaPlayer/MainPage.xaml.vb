@@ -10,6 +10,9 @@ Public NotInheritable Class MainPage
 
     Private m_storageFile As StorageFile
 
+    ''' <summary>
+    ''' コンストラクタ
+    ''' </summary>
     Public Sub New()
         ' この呼び出しはデザイナーで必要です。
         InitializeComponent()
@@ -17,6 +20,11 @@ Public NotInheritable Class MainPage
         ' InitializeComponent() 呼び出しの後で初期化を追加します。
     End Sub
 
+    ''' <summary>
+    ''' ファイル選択ボタンのクリックイベント
+    ''' </summary>
+    ''' <param name="sender">オブジェクト</param>
+    ''' <param name="e">ルーティングイベントのデータ</param>
     Public Async Sub OnClickFileSelect(ByVal sender As Object, ByVal e As RoutedEventArgs)
         Dim picker = New Windows.Storage.Pickers.FileOpenPicker()
         picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.VideosLibrary
