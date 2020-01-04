@@ -15,7 +15,16 @@ namespace MediaPlayer
 	public ref class MainPage sealed
 	{
 	public:
+		/// <summary>
+		/// コンストラクタ
+		/// </summary>
 		MainPage();
+
+		/// <summary>
+		/// ファイル選択ボタンのクリックイベント
+		/// </summary>
+		/// <param name="sender">オブジェクト</param>
+		/// <param name="e">ルーティングイベントのデータ</param>
 		void OnClickFileSelect(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 
 	private:

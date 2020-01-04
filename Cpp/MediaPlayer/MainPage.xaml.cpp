@@ -28,11 +28,19 @@ using namespace Windows::Storage::AccessCache;
 
 // 空白ページの項目テンプレートについては、https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x411 を参照してください
 
+/// <summary>
+/// コンストラクタ
+/// </summary>
 MainPage::MainPage()
 {
 	InitializeComponent();
 }
 
+/// <summary>
+/// ファイル選択ボタンのクリックイベント
+/// </summary>
+/// <param name="sender">オブジェクト</param>
+/// <param name="e">ルーティングイベントのデータ</param>
 void MainPage::OnClickFileSelect(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	auto picker = ref new FileOpenPicker();
